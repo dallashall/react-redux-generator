@@ -38,3 +38,4 @@ frontend
     |_ index.jsx
 ```
 
+Interested in contributing? Check out the [Contribution Guidelines](./CONTRIBUTING.md)
