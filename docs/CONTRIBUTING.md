@@ -1,6 +1,7 @@
 # Contribution Guidelines
+
 *No-one really thought of fission before its discovery.* **–Lise Meitner**
------
+
 These are simple guidelines that help to keep this project organized and on task. If you would like to contribute, you need only follow the following steps.
 
 ## Create/Claim an Issue
