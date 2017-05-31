@@ -1,11 +1,11 @@
 # Contribution Guidelines
-### *No-one really thought of fission before its discovery.* **–Lise Meitner**
+*No-one really thought of fission before its discovery.* **–Lise Meitner**
 -----
 These are simple guidelines that help to keep this project organized and on task. If you would like to contribute, you need only follow the following steps.
 
 ## Create/Claim an Issue
 
-Whether you are filling a gap in the code, fixing a bug, or adding a new feature, you should start by either creating a new [issue](https://github.com/dallashall/react-redux-generator/issues) or claim an existign one by commenting and offering to help.
+Whether you are filling a gap in the code, fixing a bug, or adding a new feature, you should start by either creating a new [issue](https://github.com/dallashall/react-redux-generator/issues) or claim an existing one by commenting and offering to help.
 
 ## Clone the Repo Locally
 
