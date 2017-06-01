@@ -1,7 +1,8 @@
 import {
   RECEIVE_SINGLE_EXAMPLE,
   RECEIVE_EXAMPLES,
-  REMOVE_EXAMPLE
+  REMOVE_EXAMPLE,
+  RECEIVE_EXAMPLE_ERRORS
 } from '../actions/example_actions';
 
 const _nullExample = {
