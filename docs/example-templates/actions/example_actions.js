@@ -8,6 +8,7 @@ import {
 export const RECEIVE_SINGLE_EXAMPLE = "RECEIVE_SINGLE_EXAMPLE";
 export const RECEIVE_EXAMPLES = "RECEIVE_EXAMPLES";
 export const REMOVE_EXAMPLE = "REMOVE_EXAMPLE";
+export const RECEIVE_EXAMPLE_ERRORS = "RECEIVE_EXAMPLE_ERRORS";
 
 const receiveSingleExample = (example) => ({
   type: RECEIVE_SINGLE_EXAMPLE,
@@ -22,6 +23,11 @@ const receiveExamples = (example) => ({
 const removeExample = (exampleId) => ({
   type: REMOVE_EXAMPLE,
   exampleId
+});
+
+const receiveExampleErrors = (errors) => ({
+  type: RECEIVE_EXAMPLE_ERRORS,
+  errors
 });
 
 export const fetchExamples = () => (dispatch) => {
@@ -39,7 +45,7 @@ export const fetchSingleExample = (exampleId) => (dispatch) => {
 };
 
 // The format for objects here should be as follows:
-// 
+//
 // formExample = {
 //   example: {
 //     id: 1
