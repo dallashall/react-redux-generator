@@ -5,6 +5,7 @@ import {
 } from '../actions/example_actions';
 
 const _nullExample = {
+  id: 0,
   stringVariable: "",
   numberVariable: 0
 };
@@ -13,8 +14,13 @@ const _nullExamples = {
   all: {
     0: _nullExample
   },
-  current: _nullExample
+  current: _nullExample,
+  errors: []
 };
+
+const _blankErrors = {
+  errors: []
+}
 
 const ExampleReducer = (state = _nullExamples, action) => {
   Object.freeze(state);
@@ -26,7 +32,11 @@ const ExampleReducer = (state = _nullExamples, action) => {
 
     case RECEIVE_EXAMPLES:
 
-      return Object.assign(newState, { all: action.examples });
+      return Object.assign(
+        newState,
+        { all: action.examples },
+        _blankErrors
+      );
 
     case RECEIVE_SINGLE_EXAMPLE:
 
@@ -34,7 +44,11 @@ const ExampleReducer = (state = _nullExamples, action) => {
 
       Object.assign(all, { [id]: action.example });
 
-      return Object.assign({ all }, { current: action.example });
+      return Object.assign(
+        { all },
+        { current: action.example },
+        _blankErrors
+      );
 
     case REMOVE_EXAMPLE:
 
@@ -46,6 +60,12 @@ const ExampleReducer = (state = _nullExamples, action) => {
       }
 
       return { all, current };
+
+    case RECEIVE_EXAMPLE_ERRORS:
+
+      const errors = action.errors
+
+      return Object.assign(newState, { errors });
 
     default:
 
