@@ -1,3 +1,1 @@
-json.id example.id
-json.string_variable example.string_variable
-json.number_variable example.number_variable
+json.extract! example, :id, :string_variable, :number_variable
