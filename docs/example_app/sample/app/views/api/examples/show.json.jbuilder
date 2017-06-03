@@ -1,0 +1,1 @@
+json.partial! 'api/examples/example.json.jbuilder', example: @example
