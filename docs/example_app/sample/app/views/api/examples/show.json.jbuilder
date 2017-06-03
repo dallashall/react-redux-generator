@@ -1,1 +1,1 @@
-json.partial! 'api/examples/example.json.jbuilder', example: @example
+json.partial! 'example', example: @example
