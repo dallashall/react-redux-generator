@@ -11210,7 +11210,7 @@ var App = function App() {
       _react2.default.createElement(
         'h1',
         null,
-        'Example'
+        'Example App for the React/Redux Generator'
       )
     ),
     _react2.default.createElement(_example_index_container2.default, null),
@@ -11247,13 +11247,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ExampleComponentStateful = function (_React$Component) {
-  _inherits(ExampleComponentStateful, _React$Component);
+var ExampleForm = function (_React$Component) {
+  _inherits(ExampleForm, _React$Component);
 
-  function ExampleComponentStateful(props) {
-    _classCallCheck(this, ExampleComponentStateful);
+  function ExampleForm(props) {
+    _classCallCheck(this, ExampleForm);
 
-    var _this = _possibleConstructorReturn(this, (ExampleComponentStateful.__proto__ || Object.getPrototypeOf(ExampleComponentStateful)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (ExampleForm.__proto__ || Object.getPrototypeOf(ExampleForm)).call(this, props));
 
     _this.state = {
       stringVariable: "",
@@ -11263,7 +11263,7 @@ var ExampleComponentStateful = function (_React$Component) {
     return _this;
   }
 
-  _createClass(ExampleComponentStateful, [{
+  _createClass(ExampleForm, [{
     key: "update",
     value: function update(property) {
       var _this2 = this;
@@ -11350,10 +11350,10 @@ var ExampleComponentStateful = function (_React$Component) {
     }
   }]);
 
-  return ExampleComponentStateful;
+  return ExampleForm;
 }(_react2.default.Component);
 
-exports.default = ExampleComponentStateful;
+exports.default = ExampleForm;
 
 /***/ }),
 /* 102 */
@@ -11570,7 +11570,7 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var ExampleComponentStateless = function ExampleComponentStateless(_ref) {
+var ExampleShow = function ExampleShow(_ref) {
   var example = _ref.example;
   return _react2.default.createElement(
     "div",
@@ -11594,7 +11594,7 @@ var ExampleComponentStateless = function ExampleComponentStateless(_ref) {
   );
 };
 
-exports.default = ExampleComponentStateless;
+exports.default = ExampleShow;
 
 /***/ }),
 /* 107 */
@@ -11652,7 +11652,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // React
 document.addEventListener('DOMContentLoaded', function () {
   var store = (0, _store2.default)();
-  window.store = store;
   var root = document.getElementById('root');
   _reactDom2.default.render(_react2.default.createElement(_root2.default, { store: store }), root);
 });

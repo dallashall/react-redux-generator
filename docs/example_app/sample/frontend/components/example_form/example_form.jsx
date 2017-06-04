@@ -1,6 +1,6 @@
 import React from 'react';
 
-class ExampleComponentStateful extends React.Component {
+class ExampleForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -75,4 +75,4 @@ class ExampleComponentStateful extends React.Component {
   }
 }
 
-export default ExampleComponentStateful;
+export default ExampleForm;

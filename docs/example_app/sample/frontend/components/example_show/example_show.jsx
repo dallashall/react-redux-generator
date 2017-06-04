@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ExampleComponentStateless = ({ example }) => (
+const ExampleShow = ({ example }) => (
   <div>
     <ul className="example-list">
       <li>String Variable: {example.stringVariable}</li>
@@ -9,4 +9,4 @@ const ExampleComponentStateless = ({ example }) => (
   </div>
 );
 
-export default ExampleComponentStateless;
+export default ExampleShow;
