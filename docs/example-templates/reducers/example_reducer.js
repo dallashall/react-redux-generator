@@ -21,27 +21,26 @@ const _nullExamples = {
 
 const _blankErrors = {
   errors: []
-}
+};
 
 const ExampleReducer = (state = _nullExamples, action) => {
   Object.freeze(state);
 
-  let newState = Object.assign({}, state);
-  let all = newState.all
+  const newState = Object.assign({}, state);
+  const all = newState.all;
 
-  switch(action.type) {
+  switch (action.type) {
 
-    case RECEIVE_EXAMPLES:
-
+    case RECEIVE_EXAMPLES: {
       return Object.assign(
         newState,
         { all: action.examples },
         _blankErrors
       );
+    }
 
-    case RECEIVE_SINGLE_EXAMPLE:
-
-      let id = action.example.id;
+    case RECEIVE_SINGLE_EXAMPLE: {
+      const id = action.example.id;
 
       Object.assign(all, { [id]: action.example });
 
@@ -50,9 +49,9 @@ const ExampleReducer = (state = _nullExamples, action) => {
         { current: action.example },
         _blankErrors
       );
+    }
 
-    case REMOVE_EXAMPLE:
-
+    case REMOVE_EXAMPLE: {
       delete all[action.exampleId];
 
       let current = newState.current;
@@ -61,15 +60,15 @@ const ExampleReducer = (state = _nullExamples, action) => {
       }
 
       return { all, current };
+    }
 
-    case RECEIVE_EXAMPLE_ERRORS:
-
-      const errors = action.errors
+    case RECEIVE_EXAMPLE_ERRORS: {
+      const errors = action.errors;
 
       return Object.assign(newState, { errors });
+    }
 
     default:
-
       return state;
   }
 };
