@@ -30,12 +30,12 @@ const receiveExampleErrors = errors => ({
   errors
 });
 
-// export const fetchExamples = () => dispatch => ({
-//   getToApi(`examples`)
-//     .then(
-//       examples => dispatch(receiveExamples(examples))
-//     );
-// });
+export const fetchExamples = () => dispatch => (
+  getToApi(`examples`)
+    .then(
+      examples => dispatch(receiveExamples(examples))
+    )
+);
 
 export const fetchSingleExample = exampleId => dispatch => (
   getToApi(`examples/${exampleId}`)

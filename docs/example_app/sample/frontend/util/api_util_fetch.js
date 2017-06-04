@@ -1,7 +1,7 @@
 // The following is an easily configurable, modular
 // CRUD interface. It uses the fetch protocal.
 
-const apiUrl = '[API_URL_HERE]';
+const apiUrl = 'http://localhost:3000/api/';
 
 const jsonTokenHeader = token => (new Headers({
   'Content-Type': 'application/json',

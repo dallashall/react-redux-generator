@@ -8,7 +8,6 @@ const App = () => (
     <header>
       <h1>Example</h1>
     </header>
-    <ExampleShowContainer />
     <ExampleIndexContainer />
     <ExampleFormContainer />
   </div>

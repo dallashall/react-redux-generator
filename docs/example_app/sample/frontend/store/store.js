@@ -9,3 +9,5 @@ const configureStore = (preloadedState = {}) => (
     applyMiddleware(thunk)
   )
 );
+
+export default configureStore;

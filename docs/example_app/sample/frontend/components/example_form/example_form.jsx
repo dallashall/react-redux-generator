@@ -7,7 +7,7 @@ class ExampleComponentStateful extends React.Component {
       stringVariable: "",
       numberVariable: 0
     };
-    this.handleSubmit = this.handleSubmit.bimd(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(property) {
