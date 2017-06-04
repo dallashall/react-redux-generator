@@ -11276,7 +11276,10 @@ var ExampleComponentStateful = function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
-      var example = Object.assign({}, this.state);
+      var example = Object.assign({}, {
+        string_variable: this.state.stringVariable,
+        number_variable: this.state.numberVariable
+      });
       this.props.createExample({ example: example });
     }
   }, {

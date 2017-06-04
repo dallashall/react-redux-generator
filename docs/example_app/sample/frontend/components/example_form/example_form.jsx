@@ -18,7 +18,10 @@ class ExampleComponentStateful extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const example = Object.assign({}, this.state);
+    const example = Object.assign({}, {
+      string_variable: this.state.stringVariable,
+      number_variable: this.state.numberVariable
+    });
     this.props.createExample({ example });
   }
 
