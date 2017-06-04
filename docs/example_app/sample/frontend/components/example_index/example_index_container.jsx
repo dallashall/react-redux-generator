@@ -6,7 +6,7 @@ import { fetchExamples } from '../../actions/example_actions';
 const mapStateToProps = (state) => {
   if (state.examples) {
     return {
-      examples: asArray(state.examples)
+      examples: asArray(state.examples.all)
     };
   } else {
     return {

@@ -11483,7 +11483,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var mapStateToProps = function mapStateToProps(state) {
   if (state.examples) {
     return {
-      examples: (0, _selectors.asArray)(state.examples)
+      examples: (0, _selectors.asArray)(state.examples.all)
     };
   } else {
     return {
@@ -11771,8 +11771,7 @@ exports.default = RootReducer;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var asArray = exports.asArray = function asArray(_ref) {
-  var all = _ref.all;
+var asArray = exports.asArray = function asArray(all) {
   return Object.keys(all).map(function (key) {
     return all[key];
   });
