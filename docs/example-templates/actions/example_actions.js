@@ -10,39 +10,39 @@ export const RECEIVE_EXAMPLES = "RECEIVE_EXAMPLES";
 export const REMOVE_EXAMPLE = "REMOVE_EXAMPLE";
 export const RECEIVE_EXAMPLE_ERRORS = "RECEIVE_EXAMPLE_ERRORS";
 
-const receiveSingleExample = (example) => ({
+const receiveSingleExample = example => ({
   type: RECEIVE_SINGLE_EXAMPLE,
   example
 });
 
-const receiveExamples = (example) => ({
+const receiveExamples = examples => ({
   type: RECEIVE_EXAMPLES,
   examples
 });
 
-const removeExample = (exampleId) => ({
+const removeExample = exampleId => ({
   type: REMOVE_EXAMPLE,
   exampleId
 });
 
-const receiveExampleErrors = (errors) => ({
+const receiveExampleErrors = errors => ({
   type: RECEIVE_EXAMPLE_ERRORS,
   errors
 });
 
-export const fetchExamples = () => (dispatch) => {
-  return getToApi(`examples`)
+export const fetchExamples = () => dispatch => (
+  getToApi(`examples`)
     .then(
       examples => dispatch(receiveExamples(examples))
     )
-};
+);
 
-export const fetchSingleExample = (exampleId) => (dispatch) => {
-  return getToApi(`examples/${exampleId}`)
+export const fetchSingleExample = exampleId => dispatch => (
+  getToApi(`examples/${exampleId}`)
     .then(
       example => dispatch(receiveSingleExample(example))
     )
-};
+);
 
 // The format for objects here should be as follows:
 //
@@ -52,23 +52,23 @@ export const fetchSingleExample = (exampleId) => (dispatch) => {
 //   }
 // }
 
-export const createExample = (formExample) => (dispatch) => {
-  return postToApi('examples', formExample)
+export const createExample = formExample => dispatch => (
+  postToApi('examples', formExample)
     .then(
       example => dispatch(receiveSingleExample(example))
     )
-};
+);
 
-export const updateExample = (formExample) => (dispatch) => {
-  return patchToApi(`examples/${formExample.example.id}`, formExample)
+export const updateExample = formExample => dispatch => (
+  patchToApi(`examples/${formExample.example.id}`, formExample)
     .then(
       example => dispatch(receiveSingleExample(example))
     )
-};
+);
 
-export const destroyExample = (exampleId) => (dispatch) => {
-  return deleteToApi(`examples/${exampleId}`)
+export const destroyExample = exampleId => dispatch => (
+  deleteToApi(`examples/${exampleId}`)
     .then(
       example => dispatch(removeExample(example))
     )
-};
+);
