@@ -11481,9 +11481,9 @@ var _example_actions = __webpack_require__(34);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapStateToProps = function mapStateToProps(state) {
-  if (state.all) {
+  if (state.examples) {
     return {
-      examples: (0, _selectors.asArray)(state.all)
+      examples: (0, _selectors.asArray)(state.examples)
     };
   } else {
     return {
@@ -11520,8 +11520,7 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ExampleIndexItem = function ExampleIndexItem(_ref) {
-  var stringVariable = _ref.stringVariable,
-      numberVariable = _ref.numberVariable;
+  var example = _ref.example;
   return _react2.default.createElement(
     "div",
     { className: "example-index-item" },
@@ -11536,7 +11535,7 @@ var ExampleIndexItem = function ExampleIndexItem(_ref) {
       _react2.default.createElement(
         "span",
         { className: "index-item-copy" },
-        stringVariable
+        example.string_variable
       ),
       _react2.default.createElement(
         "span",
@@ -11546,7 +11545,7 @@ var ExampleIndexItem = function ExampleIndexItem(_ref) {
       _react2.default.createElement(
         "span",
         { className: "index-item-copy" },
-        numberVariable
+        example.number_variable
       )
     )
   );
@@ -11653,6 +11652,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // React
 document.addEventListener('DOMContentLoaded', function () {
   var store = (0, _store2.default)();
+  window.store = store;
   var root = document.getElementById('root');
   _reactDom2.default.render(_react2.default.createElement(_root2.default, { store: store }), root);
 });
@@ -11773,9 +11773,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var asArray = exports.asArray = function asArray(_ref) {
-  var examples = _ref.examples;
-  return Object.keys(examples).map(function (key) {
-    return examples[key];
+  var all = _ref.all;
+  return Object.keys(all).map(function (key) {
+    return all[key];
   });
 };
 
@@ -11802,10 +11802,11 @@ var jsonTokenHeader = function jsonTokenHeader(token) {
 };
 
 var _toApi = function _toApi(url, method, payload, token) {
+  var body = method === 'GET' ? null : JSON.stringify(payload);
   return fetch(apiUrl + url, {
     method: method,
     headers: jsonTokenHeader(token),
-    body: JSON.stringify(payload)
+    body: body
   }).then(function (res) {
     return res.json();
   }); // Expects JSON response from server

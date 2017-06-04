@@ -10,10 +10,11 @@ const jsonTokenHeader = token => (new Headers({
 );
 
 const _toApi = function _toApi(url, method, payload, token) {
+  const body = method === 'GET' ? null : JSON.stringify(payload);
   return fetch(apiUrl + url, {
     method,
     headers: jsonTokenHeader(token),
-    body: JSON.stringify(payload)
+    body
   })
   .then(res => res.json()); // Expects JSON response from server
 };

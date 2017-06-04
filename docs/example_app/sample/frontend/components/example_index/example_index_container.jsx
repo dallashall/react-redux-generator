@@ -4,9 +4,9 @@ import { asArray } from '../../reducers/selectors';
 import { fetchExamples } from '../../actions/example_actions';
 
 const mapStateToProps = (state) => {
-  if (state.all) {
+  if (state.examples) {
     return {
-      examples: asArray(state.all)
+      examples: asArray(state.examples)
     };
   } else {
     return {
