@@ -9,11 +9,11 @@ class Api::ExamplesController < ApplicationController
   end
 
   def show
-    @example = Example.find(params[:id])
+    @example = Example.find_by(id: params[:id])
   end
 
   def update
-    @example = Example.find(params[:id])
+    @example = Example.find_by(id: params[:id])
     if @example.update_attributes(example_params)
       render :show
     else
@@ -26,7 +26,7 @@ class Api::ExamplesController < ApplicationController
   end
 
   def destroy
-    @example = Example.find(params[:id])
+    @example = Example.find_by(id: params[:id])
     if @example.destroy
       render :show
     else
