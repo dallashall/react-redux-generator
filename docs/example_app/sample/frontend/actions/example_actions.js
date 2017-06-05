@@ -5,6 +5,14 @@ import {
   postToApi
 } from '../util/api_util_fetch';
 
+// **For browsers that do not support fetch**
+// import {
+//   deleteToApi,
+//   getToApi,
+//   patchToApi,
+//   postToApi
+// } from '../util/api_util_xmlhttp';
+
 export const RECEIVE_SINGLE_EXAMPLE = "RECEIVE_SINGLE_EXAMPLE";
 export const RECEIVE_EXAMPLES = "RECEIVE_EXAMPLES";
 export const REMOVE_EXAMPLE = "REMOVE_EXAMPLE";
