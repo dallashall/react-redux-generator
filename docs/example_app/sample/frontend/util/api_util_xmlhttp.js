@@ -1,23 +1,24 @@
 // The following is an easily configurable, modular
 // CRUD interface. It uses the fetch protocal.
 
-const apiUrl = '[API_URL_HERE]';
+const apiUrl = 'http://localhost:3000/api/';
 
 const _toApi = function _toApi(url, method, payload, token) {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
 
     xhr.onload = function xhrOnload() {
-      resolve(JSON.parse(this.responseBody));
+      resolve(JSON.parse(this.response));
     };
 
     xhr.onerror = function xhrOnerror() {
-      reject(JSON.parse(this.responseBody));
+      reject(JSON.parse(this.response));
     };
 
     const params = JSON.stringify(payload);
+    const fullUrl = apiUrl + url;
 
-    xhr.open(method, url);
+    xhr.open(method, fullUrl);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.setRequestHeader('Authorization', `Token ${token}`);
     xhr.send(params);
