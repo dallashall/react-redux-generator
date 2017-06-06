@@ -1,5 +1,5 @@
 // The following is an easily configurable, modular
-// CRUD interface. It uses the fetch protocal.
+// CRUD interface. It uses the fetch protocol.
 
 const apiUrl = 'http://localhost:3000/api/';
 
