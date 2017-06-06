@@ -41,14 +41,16 @@ const receiveExampleErrors = errors => ({
 export const fetchExamples = () => dispatch => (
   getToApi(`examples`)
     .then(
-      examples => dispatch(receiveExamples(examples))
+      examples => dispatch(receiveExamples(examples)),
+      errors => dispatch(receiveExampleErrors(errors.responseJSON))
     )
 );
 
 export const fetchSingleExample = exampleId => dispatch => (
   getToApi(`examples/${exampleId}`)
     .then(
-      example => dispatch(receiveSingleExample(example))
+      example => dispatch(receiveSingleExample(example)),
+      errors => dispatch(receiveExampleErrors(errors.responseJSON))
     )
 );
 
@@ -63,20 +65,23 @@ export const fetchSingleExample = exampleId => dispatch => (
 export const createExample = formExample => dispatch => (
   postToApi('examples', formExample)
     .then(
-      example => dispatch(receiveSingleExample(example))
+      example => dispatch(receiveSingleExample(example)),
+      errors => dispatch(receiveExampleErrors(errors.responseJSON))
     )
 );
 
 export const updateExample = formExample => dispatch => (
   patchToApi(`examples/${formExample.example.id}`, formExample)
     .then(
-      example => dispatch(receiveSingleExample(example))
+      example => dispatch(receiveSingleExample(example)),
+      errors => dispatch(receiveExampleErrors(errors.responseJSON))
     )
 );
 
 export const destroyExample = exampleId => dispatch => (
   deleteToApi(`examples/${exampleId}`)
     .then(
-      example => dispatch(removeExample(example))
+      example => dispatch(removeExample(example)),
+      errors => dispatch(receiveExampleErrors(errors.responseJSON))
     )
 );
