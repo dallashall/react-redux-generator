@@ -6,8 +6,7 @@ const apiUrl = '[API_URL_HERE]';
 const jsonTokenHeader = token => (new Headers({
   'Content-Type': 'application/json',
   Authorization: `Token ${token}`   // Optional
-})
-);
+}));
 
 const _toApi = function _toApi(url, method, payload, token) {
   return fetch(apiUrl + url, {
