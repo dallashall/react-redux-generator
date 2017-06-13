@@ -1,0 +1,11 @@
+{
+  "name": "React-Redux-Generator",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/dallashall/react-redux-generator.git",
+  "author": "Dallas Hall <dallas.hall@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "vorpal": "^1.12.0"
+  }
+}
