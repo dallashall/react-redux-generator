@@ -1,18 +1,20 @@
 // The following is an easily configurable, modular
 // CRUD interface. It uses the fetch protocol.
 
-const apiUrl = '[API_URL_HERE]';
+const apiUrl = 'http://localhost:3000/api/';
 
 const jsonTokenHeader = token => (new Headers({
   'Content-Type': 'application/json',
   Authorization: `Token ${token}`   // Optional
-}));
+})
+);
 
 const _toApi = function _toApi(url, method, payload, token) {
+  const body = method === 'GET' ? null : JSON.stringify(payload);
   return fetch(apiUrl + url, {
     method,
     headers: jsonTokenHeader(token),
-    body: JSON.stringify(payload)
+    body
   })
   .then(res => res.json()); // Expects JSON response from server
 };

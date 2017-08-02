@@ -38,7 +38,6 @@ const ExampleReducer = (state = _nullExamples, action) => {
         _blankErrors
       );
     }
-
     case RECEIVE_SINGLE_EXAMPLE: {
       const id = action.example.id;
 
@@ -50,7 +49,6 @@ const ExampleReducer = (state = _nullExamples, action) => {
         _blankErrors
       );
     }
-
     case REMOVE_EXAMPLE: {
       delete all[action.exampleId];
 
@@ -61,13 +59,11 @@ const ExampleReducer = (state = _nullExamples, action) => {
 
       return { all, current };
     }
-
     case RECEIVE_EXAMPLE_ERRORS: {
       const errors = action.errors;
 
       return Object.assign(newState, { errors });
     }
-
     default:
       return state;
   }

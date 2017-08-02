@@ -1,7 +1,7 @@
 // The following is an easily configurable, modular
 // CRUD interface. It uses the fetch protocol.
 
-const apiUrl = '[API_URL_HERE]';
+const apiUrl = 'http://localhost:3000/api/';
 
 const _toApi = function _toApi(url, method, payload, token) {
   return new Promise((resolve, reject) => {
