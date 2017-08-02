@@ -31,7 +31,7 @@ const _toApi = function _toApi(url, method, payload, token) {
 const fetchToApi = `
 const jsonTokenHeader = token => (new Headers({
   'Content-Type': 'application/json',
-  Authorization: \`Token \$\{token\}\`   // Optional
+  Authorization: \`Token \${token}\`   // Optional
 }));
 
 const _toApi = function _toApi(url, method, payload, token) {
