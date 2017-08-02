@@ -22,7 +22,7 @@ const _toApi = function _toApi(url, method, payload, token) {
 
     xhr.open(method, fullUrl);
     xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.setRequestHeader('Authorization', \`Token \$\{token\}\`);
+    xhr.setRequestHeader('Authorization', \`Token \${token}\`);
     xhr.send(params);
   });
 };
